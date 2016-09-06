@@ -1,6 +1,14 @@
 class BlogPostsController < ApplicationController
   before_action :set_blog_post, only: [:show, :edit, :update, :destroy]
 
+
+def your_posts
+
+end
+
+def user_posts
+  @user = User.find(params[:id])
+end
   # GET /blog_posts
   # GET /blog_posts.json
   def index
