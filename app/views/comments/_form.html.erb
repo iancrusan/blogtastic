@@ -10,15 +10,13 @@
       </ul>
     </div>
   <% end %>
-  <div class="field">
-    <%= f.label :author %><br>
-    <%= f.text_field :author %>
+  <div class="form-group">
+    <%= f.text_field :author, class: "form-control", placeholder: "Author Name" %>
   </div>
-  <div class="field">
-    <%= f.label :comment_entry %><br>
-    <%= f.text_area :comment_entry %>
+  <div class="form-group">
+    <%= f.text_area :comment_entry, class: "form-control", :rows => 10, placeholder: "What Do You Think?" %>
   </div>
-  <div class="field cant-see-me">
+  <div class="form-group cant-see-me">
     <%= f.number_field :blog_post_id, value: @blog_post.id %>
   </div>
   <div class="actions">

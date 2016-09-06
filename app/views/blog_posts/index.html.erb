@@ -10,7 +10,8 @@
           <%= link_to blog_post.title, blog_post %>
         </div>
         <div class="panel-body">
-          <p>By: <%= blog_post.author %></p>
+          By: <%= blog_post.author %><br />
+          
           <p><%= blog_post.blog_entry[0..250] %>...[<%= link_to "Read More", blog_post %>]</p>
         </div>
         <div class="panel-footer">

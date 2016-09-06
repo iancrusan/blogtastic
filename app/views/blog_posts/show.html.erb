@@ -5,7 +5,9 @@
     <%= @blog_post.title %>
   </div>
   <div class="panel-body">
-    <p><%= @blog_post.author %></p>
+    By: <strong><%= @blog_post.author %></strong><span class="posted-at">
+      posted at: <%= @blog_post.created_at.strftime('%m/%d/%Y at %I:%M%p') %>
+    </span><br/>
     <p><%= @blog_post.blog_entry %></p>
   </div>
   <div class="panel-footer">
@@ -31,6 +33,7 @@
     <div class="panel-body">
       <p><strong><%= comment.author %></strong> said: </p>
       <p><%= comment.comment_entry %></p>
+      <p><span class="posted-at"><%= comment.created_at.strftime('%m/%d/%y %H:%M:%S') %></span></p>
       <%= link_to "Edit Comment", edit_blog_post_comment_path(@blog_post, comment) %> |
       <%= link_to "Destroy", [comment.blog_post, comment], method: :delete, data: { confirm: 'Are you sure?' } %>
     </div>
