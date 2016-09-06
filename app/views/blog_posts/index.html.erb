@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<p id="notice">Welcome <%= current_user.username %>!</p>
 
 <h1>Current Blog Posts</h1>
 
@@ -10,7 +10,7 @@
           <%= link_to blog_post.title, blog_post %>
         </div>
         <div class="panel-body">
-          By: <%= blog_post.author %><br />
+          By: <%= blog_post.user.username %><p><span class="posted-at">Posted at: <%= blog_post.created_at.strftime('%m/%d/%y %H:%M:%S') %></span></p><br />
 
           <p><%= blog_post.blog_entry[0..250] %>...[<%= link_to "Read More", blog_post %>]</p>
         </div>
